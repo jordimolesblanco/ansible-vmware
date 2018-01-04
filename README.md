@@ -1,3 +1,6 @@
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/jordimolesblanco/ansible-vmware/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/jordimolesblanco/ansible-vmware/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/jordimolesblanco/ansible-vmware/badges/build.png?b=master)](https://scrutinizer-ci.com/g/jordimolesblanco/ansible-vmware/build-status/master)
+
 # Ansible automation to clone a vm hosted in VMware
 
 For now, this is a very simple playbook (plus roles) to clone a vm that we already have in VMware, but other
