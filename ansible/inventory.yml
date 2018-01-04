@@ -1,0 +1,8 @@
+---
+
+allmyhosts:
+  hosts:
+    host1:
+      ansible_ssh_host: 10.10.10.1
+      ansible_ssh_port: 22
+      ansible_ssh_user: ansible

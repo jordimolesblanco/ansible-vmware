@@ -1,0 +1,8 @@
+---
+
+vmware_host: '10.10.50.1'
+vmware_user: 'myuser'
+vmware_pwd: 'mypassword'
+vmware_port: '443'
+vmware_hosts_cluster: 'nameoftheclusterorhost'
+ansible_ssh_private_key_file: ~/myprivatekey

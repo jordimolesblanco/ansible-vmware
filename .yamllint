@@ -1,0 +1,9 @@
+---
+
+### link: http://yamllint.readthedocs.io/en/latest/configuration.html
+
+extends: default
+
+rules:
+  line-length:
+    max: 120

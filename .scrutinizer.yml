@@ -1,0 +1,26 @@
+---
+
+build:
+  environment:
+    postgresql: false
+    mongodb: false
+    redis: false
+    memcached: false
+    neo4j: false
+    rabbitmq: false
+    python: 2.7.7
+
+  dependencies:
+    before:
+      - pip install ansible==2.4.0.0
+      - pip install yamllint
+      - pip install ansible-lint
+
+  tests:
+    stop_on_failure: true
+    override:
+      -
+        command: "yamllint -c ~/build/.yamllint $(find ~/build/ansible/ -name '*.yml')"
+
+      -
+        command: "ansible-lint -x ANSIBLE0013 $(find ~/build/ansible/ -name '*.yml')"

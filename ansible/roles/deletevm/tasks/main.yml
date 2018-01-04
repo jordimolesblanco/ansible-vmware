@@ -1,0 +1,12 @@
+---
+
+# this will simply delete a vm given a name
+- name: Delete the vm in Vmware system
+  deletevm:
+    # these are taken from config file
+    vmware_host: "{{ vmware_host }}"
+    vmware_port: "{{ vmware_port }}"
+    vmware_user: "{{ vmware_user }}"
+    vmware_pwd: "{{ vmware_pwd }}"
+    # these are taken from command line
+    vmware_dest_vm: "{{ dest_vm }}"

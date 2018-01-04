@@ -1,0 +1,32 @@
+---
+
+# this is a very simple playbook: we delete the vm if exists, then create it and then run a few checks on it
+
+# first we check if the destination vm exists in the inventory
+- hosts: localhost
+  gather_facts: false
+  tasks:
+    - name: First we check if the given name for the vm is valid
+      shell: grep "{{ dest_vm }}:" inventory.yml
+      changed_when: false
+      register: inventory_out
+      ignore_errors: true
+
+    - name: We fail if it is not in the inventory
+      fail: msg="This is not a valid name for a new vm"
+      when: "inventory_out.rc != 0"
+
+- hosts: localhost
+  gather_facts: false
+  roles:
+    - deletevm
+
+- hosts: localhost
+  gather_facts: false
+  roles:
+    - clonevm
+
+- hosts: "{{ dest_vm }}"
+  gather_facts: false
+  roles:
+    - checkvm

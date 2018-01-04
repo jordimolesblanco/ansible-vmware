@@ -1,0 +1,14 @@
+---
+
+# this will simply clone a vm with some fixed parameters in the configuration file and some given at execution time
+- name: Clone the vm in Vmware system
+  clonevm:
+    # these are taken from config file
+    vmware_host: "{{ vmware_host }}"
+    vmware_port: "{{ vmware_port }}"
+    vmware_user: "{{ vmware_user }}"
+    vmware_pwd: "{{ vmware_pwd }}"
+    vmware_hosts_cluster: "{{ vmware_hosts_cluster }}"
+    # these are taken from command line
+    vmware_source_vm: "{{ source_vm }}"
+    vmware_dest_vm: "{{ dest_vm }}"
